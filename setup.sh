@@ -82,7 +82,7 @@ Install_Npm(){
 
 Start_Socket(){
             sudo chmod -R 777
-            sudo ./start.sh
+            sudo bash start.sh
             exit_status
 }
 
